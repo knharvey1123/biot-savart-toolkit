@@ -1,0 +1,5 @@
+Four notebooks:
+- discretized_shapes includes discretization for a ring, a Kelvin ring, a perturbed ring, and a Hasimoto soliton
+- kb_curvature includes curvature evolutions for the four discretized shapes using the Local Induction Approximation to induce binormal movement
+- kb_flow simulates binormal flow for the ring, the Kelvin ring, and the Hasimoto soliton using Euler method
+- kb_flow_rk4 simulates binormal flow for the ring, the Kelvin ring, and the Hasimoto soliton using RK4method
