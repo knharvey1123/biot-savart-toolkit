@@ -3,18 +3,6 @@ This folder includes code and results specific for the Hasimoto soliton, provide
 at the progression of simulating binormal flow starting with the Local Induction Approximation to the 
 Generalized Local Induction Equation to the binormal component of Biot-Savat Integral
 
-curvature_hs.py
-    - plots curvature of a Hasimoto soliton across different steps in evolution thorugh time
-    - using gamma_t = kB
-
-curvature_hs_nl.py
-    - plots curvature of a Hasimoto soliton which has been evolved nonlinearly
-    - using gamma_t = k(1 + epsilon*k^2)B 
-
-claude_compare.py
-    - asked claude to compare LIA simulation with the non-linear, partial binomial simulation
-    - can see main difference is speed but the non-linear also has more stability issues
-
 binormal_hs.py
     - The simplest form of the self-induced binormal flow
     - gamma_t = kB (known commonly as the Local Induction Approximation)
