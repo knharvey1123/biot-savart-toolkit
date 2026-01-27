@@ -1,0 +1,45 @@
+Hasimoto soliton evolution
+This folder includes code and results specific for the Hasimoto soliton, provides an in-depth look 
+at the progression of simulating binormal flow starting with the Local Induction Approximation to the 
+Generalized Local Induction Equation to the binormal component of Biot-Savat Integral
+
+curvature_hs.py
+    - plots curvature of a Hasimoto soliton across different steps in evolution thorugh time
+    - using gamma_t = kB
+
+curvature_hs_nl.py
+    - plots curvature of a Hasimoto soliton which has been evolved nonlinearly
+    - using gamma_t = k(1 + epsilon*k^2)B 
+
+claude_compare.py
+    - asked claude to compare LIA simulation with the non-linear, partial binomial simulation
+    - can see main difference is speed but the non-linear also has more stability issues
+
+binormal_hs.py
+    - The simplest form of the self-induced binormal flow
+    - gamma_t = kB (known commonly as the Local Induction Approximation)
+    - Takes a hasimoto soliton and evolves it through time using the above formula
+        - k and B calculated using the Frenet-Serret frame
+        - Hasimoto soliton draws parametrization from Hasimoto 1972 paper
+
+partial_binormal_hs.py
+    - Slightly more complex self-induced binormal flow
+    - Introduces another term in a Taylor Approximation
+    - gamma_t = k(1 + epsilon*k^2)B 
+
+partial_BSI_hs.py
+    - BSI-induced binormal flow
+    - Uses equation from Strong 2018
+        - last term of the derived BSI equation
+    - BSI equation housed in BSI_integral.py
+    - Uses arcspline interpolation to pull parameters at each material point
+
+BSI_integral.py
+    - integral from Strong 2018 used in BSI-induced binormal flow
+    - int(L1, L2) {(cos(x) - 1) dx / (c1 + c2 * np.cos(x))**1.5}
+      c1 = epsilon**2 - 2 * epsilon * cos(phi) + 2
+      c2 = 2 * epsilon * cos(phi) - 2
+
+arcspline_interpolator.py
+    - helper function used to pull parameters at each material point
+    - returns radius, L1, L2
